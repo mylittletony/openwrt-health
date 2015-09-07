@@ -117,5 +117,5 @@ echo $health_check
 #CURL#
 
 post_ct () {
-  curl -H "Content-Type: application/json" -X POST -d `$health_check` http://api.polkaspots.com/api/v1/nas/reporter\?mac\=$mac\&serial\=$serial\&type\=doctor
+  curl --connect-timeout 5 -s -H "Content-Type: application/json" -X POST -d `$health_check` http://api.polkaspots.com/api/v1/nas/reporter\?mac\=$mac\&serial\=$serial\&type\=doctor
 }
