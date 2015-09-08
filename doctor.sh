@@ -21,9 +21,13 @@ icmp_check () {
 	fi
 }
 
+icmp_check $ip
+
 if [ $icmpcheck -eq 1 ] ; then
 	icmpip=1
 fi
+
+icmp_check $host
 
 if [ $icmpcheck -eq 1 ] ; then
 	icmphost=1
