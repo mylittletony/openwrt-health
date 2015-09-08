@@ -67,8 +67,6 @@ mac_check () {
 	mac=`cat /etc/mac`
 }
 
-icmp_check $ip
-icmp_check $host
 url_status_check $url
 splash_check $splashcheck
 sync_id
