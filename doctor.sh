@@ -5,7 +5,7 @@ ip=8.8.8.8
 host=www.google.com
 api_url=https://api.polkaspots.com
 url=$api_url/api/v1/ping.json
-splash=tun0
+splashprocess=chilli
 mtucheck=0
 splashcheck=0
 urlstatus=0
@@ -41,7 +41,7 @@ url_status_check () {
 }
 
 splash_check () {
-	ifconfig $1 >/dev/null 2>&1
+	pidof $splashprocess >/dev/null 2>&1
 	if [ $? -eq 0 ] ; then
 		splashcheck=1
 	fi
