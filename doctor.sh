@@ -15,11 +15,11 @@ hoststatus=0
 
 icmp_check () {
 ping -c 2 $1 >/dev/null 2>&1
-if [ $? -eq 0 ] ; then
-result1=1
-else 
-result1=0
-fi
+  if [ $? -eq 0 ] ; then
+    result1=1
+  else
+    result1=0
+  fi
 }
 
 icmp_check $ip
@@ -59,7 +59,7 @@ syncstatus=`cat /etc/sync`
 sync_id
 
 mtu_check () {
-mtu=`cat /etc/config/network | grep mtu | awk -F"'" '{ print $2 }'`  
+mtu=`cat /etc/config/network | grep mtu | awk -F"'" '{ print $2 }'`
 ping -c 2 -s $mtu 8.8.8.8 >/dev/null 2>&1
 if [ $? -eq 0 ] ; then
 mtustatus=1
