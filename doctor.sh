@@ -53,7 +53,7 @@ sync_id () {
 
 mtu_check () {
 	mtu=`cat /etc/config/network | grep mtu | awk -F"'" '{ print $2 }'`
-	ping -c 2 -s $mtu 8.8.8.8 >/dev/null 2>&1
+	ping -c 2 -s $mtu bbc.co.uk >/dev/null 2>&1
 	if [ $? -eq 0 ] ; then
 		mtucheck=1
 	fi
