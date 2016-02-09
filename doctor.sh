@@ -3,7 +3,7 @@ source /usr/share/libubox/jshn.sh
 
 ip=8.8.8.8
 host=www.google.com
-api_url=https://api.polkaspots.com
+api_url=https://api.ctapp.io
 url=$api_url/api/v1/ping.json
 splashprocess=chilli
 mtucheck=0
@@ -53,7 +53,7 @@ sync_id () {
 
 mtu_check () {
 	mtu=`cat /etc/config/network | grep mtu | awk -F"'" '{ print $2 }'`
-	ping -c 2 -s $mtu bbc.co.uk >/dev/null 2>&1
+	ping -c 2 -s $mtu bbc.com >/dev/null 2>&1
 	if [ $? -eq 0 ] ; then
 		mtucheck=1
 	fi
